@@ -1,0 +1,7 @@
+>>> Warning 216 "main.c" Line 58(0,1): Interrupts disabled during call to prevent re-entrancy:  (Set_Motor_Duty)
+>>> Warning 216 "main.c" Line 58(0,1): Interrupts disabled during call to prevent re-entrancy:  (@SITOF)
+>>> Warning 216 "main.c" Line 58(0,1): Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
+>>> Warning 216 "main.c" Line 58(0,1): Interrupts disabled during call to prevent re-entrancy:  (@SFTOI)
+>>> Warning 202 "C:\Users\e882742\Documents\Robotica\BabyFaraday V3.0\Config.h" Line 25(5,8): Variable never used:   rs232_errors
+      Memory usage:   ROM=9%      RAM=14% - 18%
+      0 Errors,  5 Warnings.

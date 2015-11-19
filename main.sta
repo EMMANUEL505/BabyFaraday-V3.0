@@ -1,78 +1,65 @@
 
-ROM used: 3930 (9%)
-          3930 (9%) including unused fragments
+ROM used: 2502 (6%)
+          2502 (6%) including unused fragments
 
-          2 Average locations per line
-          5 Average locations per statement
+          1 Average locations per line
+          3 Average locations per statement
 
-RAM used: 295 (14%) at main() level
-          366 (18%) worst case
+RAM used: 247 (12%) at main() level
+          258 (13%) worst case
 
-Stack used: 5 worst case (out of 31 total available)
+Stack used: 1 worst case (out of 31 total available)
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   57    36   4  main.c
+   67    53   7  main.c
   443     0   0  ..\..\..\..\..\Program Files (x86)\PICC\devices\30f5015.h
    28     0   0  Config.h
-    9     0   0  Global_Variables.c
- 1273   478  59  ..\..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h
+    8     0   0  Global_Variables.c
+ 1273   478  60  ..\..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h
    28     0   0  ..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
   409   121  15  ..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
    28     0   0  ..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
    17     0   0  Functions.h
-  242   176  22  Functions.c
+  187   141  18  Functions.c
 ----- -----
- 2534   811 Total
+ 2488   793 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     20   0   2             @delay_ms1
 0     16   0   2             @delay_us1
-0     14   0   0             @GETCH_BIU_1
-0     66   1   8             @MULS3232
-0    190   2   8             @MULFF
-0    416   5   8             @ADDFF
-0    482   6  19  1817 10.4  atol
+0    190   4   8             @MULFF
+0    416   8   8             @ADDFF
 0     16   0   0   158  1.8  ADC_Init
 0     46   1   2   417  2.4  Motor_Init
-0    110   1   7   771  5.3  Set_Motor_Duty
+0    110   2   7   771  5.3  Set_Motor_Duty
 0     50   1   2   252  4.1  Print_Center
-0    312   4   5  1237  2.9  Read_Sensors
-0     84   1  15   370  6.7  Digitalize_Array
-0    156   2  21   924  9.4  Get_Average_Center
-0     78   1   9   237  5.0  Get_Value
+0    312   6   5  1237  2.9  Read_Sensors
+0     84   2  15   370  6.7  Digitalize_Array
+0    156   3  21   924  9.4  Get_Average_Center
+0    104   2   8             @FLT
+0    608  12   7  2290 10.4  MAIN
 0     74   1   2             @SITOF
-0     70   1   9   235  5.2  Get_Value_L
-0     14   0   0             @const451
-0    496   6   4   696  4.8  isr
-0     34   0   0             @const452
-0    182   2   0             @PRINTFU16_115200_5891_5890
-0     38   0   0             @const456
-0     26   0   0             @const457
 0     44   1   4             @SFTOI
-0     32   0   0             @const460
-0     32   0   0             @const461
-0    546   7   7  1500  7.3  MAIN
-0     30   0   0             @const469
 
 Program metrics:
-    Functions               12
-    Statements              811
-    Comments                974
-    Volume (V)              13262
-    Difficilty (D)          63.5
-    Effort to implement (E) 842008
-    Time to implement (T)   13 hours, 0 minutes
-    Est Delivered Bugs (B)  3
-    Cyclomatic Complexity   34
-    Maintainability (MI)    115
+    Functions               8
+    Statements              793
+    Comments                972
+    Volume (V)              9169
+    Difficilty (D)          41.7
+    Effort to implement (E) 382766
+    Time to implement (T)   5 hours, 54 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   28
+    Maintainability (MI)    10
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-000FE   252  0  
-00100-0AFFE  3674  41126  
+00100-0AFFE  2246  42554  
 
 
 

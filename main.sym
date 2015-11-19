@@ -1,55 +1,53 @@
 W0      @SCRATCH
 W0L     _RETURN_
-W0      @PRINTFU16_115200_5891_5890.P1
+W0 -W1  @SFTOI.P1
 W0 -W1  @READ_PROGRAM_MEMORY.P2
-W0 -W3  @ADDFF64.P3
-W0      @SITOF.P4
-W0 -W1  @MULS3232.P5
+W0 -W1  @DIVFF.P3
+W0 -W2  @ADDFF48.P4
+W0 -W3  @I64TOF64.P5
 W0 -W1  @DIV3232B.P6
-W0      @ITOF.P7
-W0 -W3  @MULFF64.P8
-W0 -W1  @ADDFF.P9
-W0 -W2  @DIVFF48.P10
-W0 -W3  @I64TOF64.P11
-W0 -W1  @FLT.P12
-W0 -W3  @DIVFF64.P13
-W0 -W1  @MUL3232.P14
-W0      @delay_us1.P15
-W0 -W1  @DIVS3232A.P16
-W0 -W1  @MULFF.P17
-W0 -W1  @SFTOI.P18
-W0      @delay_ms1.P19
-W0 -W3  @I64TOF48.P20
-W0 -W1  @DIVFF.P21
-W0 -W2  @ADDFF48.P22
-W0 -W2  @MULFF48.P23
+W0 -W1  @MUL3232.P7
+W0      @delay_us1.P8
+W0 -W1  @MULS3232.P9
+W0 -W3  @ADDFF64.P10
+W0 -W1  @FLT.P11
+W0 -W3  @I64TOF48.P12
+W0 -W1  @ADDFF.P13
+W0 -W2  @DIVFF48.P14
+W0 -W3  @MULFF64.P15
+W0 -W2  @MULFF48.P16
+W0      @delay_ms1.P17
+W0 -W3  @DIVFF64.P18
+W0 -W1  @MULFF.P19
+W0      @SITOF.P20
+W0 -W1  @DIVS3232A.P21
+W0      @ITOF.P22
 W1      @SCRATCH
-W1      @READ_PACKED_MEMORY.P1
-W1      @WRITE_PACKED_MEMORY.P2
-W2      @WRITE_PACKED_MEMORY.P1
+W1      @WRITE_PACKED_MEMORY.P1
+W1      @READ_PACKED_MEMORY.P2
+W2 -W3  @MULFF.P1
 W2      @READ_PACKED_MEMORY.P2
-W2 -W3  @ADDFF.P3
+W2 -W3  @FLT.P3
 W2 -W3  @DIVS3232A.P4
 W2      @READ_PROGRAM_MEMORY.P5
-W2 -W3  @DIV3232B.P6
-W2 -W3  @MULFF.P7
-W2 -W3  @FLT.P8
+W2      @WRITE_PACKED_MEMORY.P6
+W2 -W3  @DIVFF.P7
+W2 -W3  @MULS3232.P8
 W2 -W3  @MUL3232.P9
-W2 -W3  @MULS3232.P10
-W2 -W3  @DIVFF.P11
-W3 -W5  @MULFF48.P1
-W3 -W5  @DIVFF48.P2
-W3      @READ_PROGRAM_MEMORY.P3
-W3      @READ_PACKED_MEMORY.P4
+W2 -W3  @ADDFF.P10
+W2 -W3  @DIV3232B.P11
+W3      @READ_PACKED_MEMORY.P1
+W3 -W5  @MULFF48.P2
+W3 -W5  @DIVFF48.P3
+W3      @WRITE_PACKED_MEMORY.P4
 W3 -W5  @ADDFF48.P5
-W3      @WRITE_PACKED_MEMORY.P6
-W4 -W7  @DIVFF64.P1
-W4 -W7  @ADDFF64.P2
-W4 -W7  @MULFF64.P3
-W4      @PRINTFU16_115200_5891_5890.P4
-800-801 rs232_errors
-802-81F sensors_ADC
-820-821 black_limit
+W3      @READ_PROGRAM_MEMORY.P6
+W4 -W7  @MULFF64.P1
+W4 -W7  @DIVFF64.P2
+W4 -W7  @ADDFF64.P3
+800-81D sensors_ADC
+81E-81F black_limit
+820-821 center_der
 822-83F sensors_BIN
 840-841 base_speed
 842-843 left_correction
@@ -67,72 +65,48 @@ W4      @PRINTFU16_115200_5891_5890.P4
 862-863 RUN
 864-865 x
 866-867 delay_time
-868-899 buffer
-89A-89B strtok.save
-89C-89F _Randseed
-8A0-8A1 Digitalize_Array.array_ADC
-8A0-8A1 Get_Average_Center.array_BIN
-8A0-8A1 Motor_Init.period
-8A0-8A1 Read_Sensors.value_array
-8A0-8A1 Print_Center.center
-8A2-8A3 Get_Average_Center.st_index
-8A2-8A3 Digitalize_Array.array_BIN
-8A4-8A5 Digitalize_Array.limit
-8A4-8A5 Get_Average_Center.end_index
-8A6-8A7 Get_Average_Center.center
-8A6-8A7 Digitalize_Array.st_index
-8A8-8A9 Digitalize_Array.end_index
-8A8-8A9 Get_Average_Center.i
-8AA-8AB Get_Average_Center.pixels_b
-8AA-8AB Digitalize_Array.i
-8AC-8AD Get_Average_Center.values_b
-8AE-8AF Get_Average_Center.pixels_w
-8B0-8B1 Get_Average_Center.values_w
-8CC     isr.option
-8CE-8CF Set_Motor_Duty.Left
-8D0-8D1 Set_Motor_Duty.Right
-8D2-8D3 Get_Value_L.val
-8D4-8D5 Get_Value_L.i
-8D4-8D5 Get_Value.val
-8D6-8D7 Get_Value.i
-8DE-8DF atol.s
-8E0-8E3 atol.result
-8E4-8E5 atol.sign
-8E6-8E7 atol.base
-8E8-8E9 atol.index
-8EA     atol.c
+868-869 BoostCounter
+86A-86B strtok.save
+86C-86F _Randseed
+870-871 Read_Sensors.value_array
+870-871 Get_Average_Center.array_BIN
+870-871 Print_Center.center
+870-871 Set_Motor_Duty.Left
+870-871 Motor_Init.period
+870-871 Digitalize_Array.array_ADC
+872-873 Digitalize_Array.array_BIN
+872-873 Set_Motor_Duty.Right
+872-873 Get_Average_Center.st_index
+874-875 Get_Average_Center.end_index
+874-875 Digitalize_Array.limit
+876-877 Get_Average_Center.center
+876-877 Digitalize_Array.st_index
+878-879 Get_Average_Center.i
+878-879 Digitalize_Array.end_index
+87A-87B Digitalize_Array.i
+87A-87B Get_Average_Center.pixels_b
+87C-87D Get_Average_Center.values_b
+87E-87F Get_Average_Center.pixels_w
+880-881 Get_Average_Center.values_w
 F80-FFF Stack
 
 ROM Allocation:
-091A  @delay_ms1
-0D28  @delay_us1
-01CE  @GETCH_BIU_1
-0300  @MULS3232
-062E  @MULFF
-0B88  @ADDFF
-0342  atol
-08DC  ADC_Init
-08EC  Motor_Init
-01DC  Set_Motor_Duty
-0B56  Print_Center
-092E  Read_Sensors
-0A66  Digitalize_Array
-0ABA  Get_Average_Center
-05E0  Get_Value
-0596  @SITOF
-0524  Get_Value_L
-0100  @const451
-06EC  isr
-010E  @const452
-024A  @PRINTFU16_115200_5891_5890
-0130  @const456
-0156  @const457
-056A  @SFTOI
-0170  @const460
-0190  @const461
-0D38  MAIN
-01B0  @const469
-0D38  @cinit
+013E  @delay_ms1
+0756  @delay_us1
+066C  @MULFF
+0464  @ADDFF
+0100  ADC_Init
+0110  Motor_Init
+0152  Set_Motor_Duty
+03E8  Print_Center
+01C0  Read_Sensors
+02F8  Digitalize_Array
+034C  Get_Average_Center
+0604  @FLT
+0766  MAIN
+041A  @SITOF
+072A  @SFTOI
+0766  @cinit
 0136  StrtoulGO
 0136  StrtolGO
 
@@ -142,7 +116,7 @@ User Memory space:
 User Memory space: 
 
 Project Directory:
-    C:\Users\e882742\Documents\Robotica\BabyFaraday V3.0\
+    C:\Users\e882742\Documents\Robotica\BabyFaraday-V3.0.git\
 
 Project Files:
     main.c
@@ -157,7 +131,7 @@ Project Files:
     Functions.c
 
 Units:
-    C:\Users\e882742\Documents\Robotica\BabyFaraday V3.0\main (main)
+    C:\Users\e882742\Documents\Robotica\BabyFaraday-V3.0.git\main (main)
 
 Compiler Settings:
     Processor:      DSPIC30F5015

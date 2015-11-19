@@ -51,9 +51,9 @@ void Set_Motor_Duty(int16 Left, int16 Right)
 
 void Print_Center(int16 center)
 {
-	if(center<16 && center>=0)  { output_low(PIN_E3);		output_high(PIN_E4);}
-	if(center>16)   			{ output_high(PIN_E3);		output_low(PIN_E4);}
-	if(center==16)   			{ output_low(PIN_E3);		output_low(PIN_E4);} 
+	if(center<16 && center>=0)  { output_low(PIN_D5);		output_high(PIN_D4);}
+	if(center>16)   			{ output_high(PIN_D5);		output_low(PIN_D4);}
+	if(center==16)   			{ output_low(PIN_D5);		output_low(PIN_D4);} 
 }
 
 void Read_Sensors_Digital(int16* value_array)
@@ -183,59 +183,4 @@ void Powered_Error(float error, float* correction, float max, float max_c)
 	}
 	else *correction=0;
 	
-}
-
-void Get_Value(float* val)
-{	
-	int i=0;
-	do
-    {	
-		buffer[i]=getc();
-		i++;
-    }while(buffer[i-1]!=13);
-	x=atol(buffer);
-	*val=x;		
-	putc(13);
-}
-
-void Get_Value_L(int16* val)
-{	
-	int i=0;
-	do
-    {	
-		buffer[i]=getc();
-		i++;
-    }while(buffer[i-1]!=13);
-	x=atol(buffer);
-	*val=x;		
-	putc(13);
-}
-
-#INT_RDA
-void isr()
-{	
-	char option="r";
-	option=getc();
-	if(option=='r')
-		{
-			RUN=!RUN;
-		}
-	if(option=='c')
-	{		
-		Set_Motor_Duty(0,0);
-		printf("base_speed=%u value=",base_speed);
-		Get_Value_L(&base_speed);
-		printf("delay_time=%u value(ms)=",delay_time);
-		Get_Value_L(&delay_time);
-		printf("KP=%u value=",(int16)KP);
-		Get_Value(&KP);	
-		printf("KI=%u value(x0.01)=",(int16)KI);
-		Get_Value(&KI);
-		KI=KI*.01;
-		printf("KD=%u value=(x0.1)",(int16)KD);
-		Get_Value(&KD); 
-		KD=KD*.1;   
-		RUN=0;
-	}	
-	output_toggle(PIN_D5);
 }

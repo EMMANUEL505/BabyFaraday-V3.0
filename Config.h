@@ -22,6 +22,6 @@
 //#FUSES ICSP1                    //ICD uses PGC1/PGD1 pins
 #use delay(clock=117920000)
 //#use delay(clock=58960000)
-#use rs232(UART1,baud=115200,bits=8, xmit=PIN_F3,rcv=PIN_F2, parity=N, TIMEOUT=5000)
+//#use rs232(UART1,baud=115200,bits=8, xmit=PIN_F3,rcv=PIN_F2, parity=N, TIMEOUT=5000)
 #DEFINE PWM_PERIOD 	1499
 #DEFINE SET_POINT	16
